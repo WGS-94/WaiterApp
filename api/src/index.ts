@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import routes from './routes';
+import { routes } from './routes';
 import mongoose from 'mongoose';
 
 mongoose.connect('mongodb+srv://teste:teste@omnisatk.tqzfo.mongodb.net/waiterApp?retryWrites=true&w=majority')

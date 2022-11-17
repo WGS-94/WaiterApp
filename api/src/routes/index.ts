@@ -1,29 +1,31 @@
 import { Router } from 'express';
 
-const routes = Router();
+import CategoryController from '../app/controllers/CategoryController';
+import ProductController from '../app/controllers/ProductController';
+import OrderController from '../app/controllers/OrderController';
+
+export const routes = Router();
 
 // Create Categories
-// routes.use('/wines', wineRouter);
+routes.post('/categories', CategoryController);
 
 // List Categories
-// routes.use('/wines', wineRouter);
+routes.get('/categories', CategoryController);
 
 // Create Product
-// routes.use('/wines', wineRouter);
+routes.post('/products', ProductController);
 
 // List Products
-// routes.use('/wines', wineRouter);
+routes.get('/products', ProductController);
 
-// Get Product by Category
-// routes.use('/wines', wineRouter);
+// Get Products by Category
+routes.get('/products/:categoryId/categories', ProductController);
 
 // Create Order
-// routes.use('/wines', wineRouter);
+routes.post('/orders', OrderController);
 
 // Change Order Status
-// routes.use('/wines', wineRouter);
+routes.get('/orders', OrderController);
 
 // DeleteCancel Order
-// routes.use('/wines', wineRouter);
-
-export default routes;
+routes.delete('/orders', OrderController);
