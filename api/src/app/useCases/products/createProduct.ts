@@ -3,12 +3,14 @@ import { Product } from '../../models/Product';
 
 export async function createProduct(req: Request, res: Response) {
   try {
-    const { name, description, imagePath } = req.body;
+    const { name, description, imagePath, ingredients, price } = req.body;
 
     const product = await Product.create({
       name,
       description,
-      imagePath
+      imagePath, 
+      ingredients,
+      price
     });
 
     return res.status(201).json(product);

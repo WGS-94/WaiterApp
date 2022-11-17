@@ -8,7 +8,7 @@ export async function listCategory(req: Request, res: Response) {
 
     return res.status(201).json(categories);
   } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: 'Error by create category' });
+    // console.error(err);
+    return res.status(500).json({ error: 'Error by get all categories' });
   }
 }
