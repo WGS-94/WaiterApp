@@ -13,7 +13,7 @@ export async function changeOrderStatus(req: Request, res: Response) {
 
     await Order.findByIdAndUpdate(orderID, { status });
 
-    return res.status(204);
+    return res.sendStatus(204);
   } catch (err) {
     console.error(err);
     return res.status(500).json({ error: 'Error by update status' });
