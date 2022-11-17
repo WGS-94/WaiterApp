@@ -10,6 +10,7 @@ import { getProductByCategory } from '../app/useCases/products/getProductByCateg
 import { createOrder } from '../app/useCases/orders/createOrder';
 import { listOrder } from '../app/useCases/orders/listOrder';
 import { changeOrderStatus } from '../app/useCases/orders/changeOrderStatus';
+import { calcelOrder } from '../app/useCases/orders/cancelOrder';
 
 export const routes = Router();
 
@@ -39,5 +40,5 @@ routes.get('/orders', listOrder);
 // Change Order Status
 routes.patch('/orders/:orderID', changeOrderStatus);
 
-// DeleteCancel Order
-// routes.delete('/orders', OrderController);
+// Delete/Cancel Order
+routes.delete('/orders/:orderID', calcelOrder);
