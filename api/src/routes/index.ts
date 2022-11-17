@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import multer from 'multer';
+import uploadConfig from '../config/upload';
 
 import { createCategory } from '../app/useCases/categories/createCategory';
 import { listCategory } from '../app/useCases/categories/listCategory';
@@ -7,6 +9,8 @@ import { listProduct } from '../app/useCases/products/listProduct';
 
 export const routes = Router();
 
+const upload = multer(uploadConfig);
+
 // Create Categories
 routes.post('/categories', createCategory);
 
@@ -14,7 +18,7 @@ routes.post('/categories', createCategory);
 routes.get('/categories', listCategory);
 
 // Create Product
-routes.post('/products', createProduct);
+routes.post('/products', upload.single('file'), createProduct);
 
 // List Products
 routes.get('/products', listProduct);
