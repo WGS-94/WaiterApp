@@ -39,4 +39,13 @@ export const Product = model('Product', new Schema({
 {
   timestamps: true
 }
+// {
+//   toJSON: {
+//     virtuals: true
+//   }
+// }
 )); 
+
+// Product.virtual('thumbnail_url').get(function(){
+//   return `http://localhost:3333/files/${imagePath}`;
+// });
