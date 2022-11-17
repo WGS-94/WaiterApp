@@ -4,8 +4,7 @@ import { Product } from '../../models/Product';
 export async function listProduct(req: Request, res: Response) {
   try {
 
-    const { categoryID } = req.params;
-    const products = await Product.find().where('category').equals(categoryID);
+    const products = await Product.find();
 
     return res.status(201).json(products);
   } catch (err) {
