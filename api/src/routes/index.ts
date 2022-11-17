@@ -1,31 +1,32 @@
 import { Router } from 'express';
 
-import CategoryController from '../app/controllers/CategoryController';
-import ProductController from '../app/controllers/ProductController';
-import OrderController from '../app/controllers/OrderController';
+import { createCategory } from '../app/useCases/categories/createCategory';
+import { listCategory } from '../app/useCases/categories/listCategory';
+import { createProduct } from '../app/useCases/products/createProduct';
+import { listProduct } from '../app/useCases/products/listProduct';
 
 export const routes = Router();
 
 // Create Categories
-routes.post('/categories', CategoryController);
+routes.post('/categories', createCategory);
 
 // List Categories
-routes.get('/categories', CategoryController);
+routes.get('/categories', listCategory);
 
 // Create Product
-routes.post('/products', ProductController);
+routes.post('/products', createProduct);
 
 // List Products
-routes.get('/products', ProductController);
+routes.get('/products', listProduct);
 
-// Get Products by Category
-routes.get('/products/:categoryId/categories', ProductController);
+// // Get Products by Category
+// routes.get('/products/:categoryID/categories', ProductController);
 
-// Create Order
-routes.post('/orders', OrderController);
+// // Create Order
+// routes.post('/orders', OrderController);
 
-// Change Order Status
-routes.get('/orders', OrderController);
+// // Change Order Status
+// routes.patch('/orders/:orderID', OrderController);
 
-// DeleteCancel Order
-routes.delete('/orders', OrderController);
+// // DeleteCancel Order
+// routes.delete('/orders', OrderController);
