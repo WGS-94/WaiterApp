@@ -2,21 +2,28 @@ import { Router } from 'express';
 
 const routes = Router();
 
-// routes.use('/sessions', sessionRouter);
-// routes.use('/users', userRouter);
-
-// routes.use('/velasquinho', limiter, velasquinhoRouter);
-
-// routes.use(ensureAuthenticated); // Toas rotas abaixo são autenticadas
-
+// Create Categories
 // routes.use('/wines', wineRouter);
-// routes.use('/categories', categoryRouter);
-// routes.use('/varieties', varietyRouter);
-// routes.use('/clients', clientRouter);
-// routes.use('/admins', adminRouter);
-// routes.use('/sales', salesRouter);
-// routes.use('/tasks', taskRouter);
-// routes.use('/challenges', challengesRouter);
-// routes.use('/recomendations', recomendationRouter);
+
+// List Categories
+// routes.use('/wines', wineRouter);
+
+// Create Product
+// routes.use('/wines', wineRouter);
+
+// List Products
+// routes.use('/wines', wineRouter);
+
+// Get Product by Category
+// routes.use('/wines', wineRouter);
+
+// Create Order
+// routes.use('/wines', wineRouter);
+
+// Change Order Status
+// routes.use('/wines', wineRouter);
+
+// DeleteCancel Order
+// routes.use('/wines', wineRouter);
 
 export default routes;
