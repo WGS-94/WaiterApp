@@ -1,4 +1,5 @@
 import { Order } from '../../types/Order';
+import { OrderModal } from '../OrderModal';
 import * as S from './styles';
 
 interface OrdersBoardProps {
@@ -8,29 +9,37 @@ interface OrdersBoardProps {
 }
 
 export function OrdersBoard({icon, title, orders}: OrdersBoardProps) {
+
+  function handleOpenOrder() {
+    alert( 'modal open');
+  }
+
   return (
-    <S.Board>
-      <header>
-        {icon}
-        <strong>{title}</strong>
-        <span>({orders.length})</span>
-      </header>
+    <>
+      <OrderModal />
+      <S.Board>
+        <header>
+          {icon}
+          <strong>{title}</strong>
+          <span>({orders.length})</span>
+        </header>
 
-      {orders.length > 0 ? (
-        <S.OrdersContainer>
-          {orders.map((order) => (
-            <button key={order._id} type="button">
-              <strong>Mesa {order.table}</strong>
-              <span>{order.products.length} itens</span>
-            </button>
-          ))}
-        </S.OrdersContainer>
-      ): (
-        <S.Empty>
-          <span>Vazio</span>
-        </S.Empty>
-      )}
+        {orders.length > 0 ? (
+          <S.OrdersContainer>
+            {orders.map((order) => (
+              <button key={order._id} type="button" onClick={handleOpenOrder}>
+                <strong>Mesa {order.table}</strong>
+                <span>{order.products.length} itens</span>
+              </button>
+            ))}
+          </S.OrdersContainer>
+        ): (
+          <S.Empty>
+            <span>Vazio</span>
+          </S.Empty>
+        )}
 
-    </S.Board>
+      </S.Board>
+    </>
   );
 }
