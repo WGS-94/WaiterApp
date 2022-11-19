@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { X, Clock, CookingPot, CheckSquare } from 'phosphor-react';
 import { Order } from '../../types/Order';
 import { formatCurrency } from '../../utils/formatCurrency';
@@ -11,6 +12,22 @@ interface OrderModalProps {
 }
 
 export function OrderModal({ visible, order, onRequestClose }: OrderModalProps) {
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent){
+      if(event.key === 'Escape') {
+        onRequestClose();
+
+        // console.log(event.key);
+      }
+    }
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+
+  }, [onRequestClose]);
 
   if(!visible || !order){
     return null;
