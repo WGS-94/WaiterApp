@@ -21,6 +21,7 @@ export function OrdersBoard({icon, title, orders}: OrdersBoardProps) {
 
   function handleCloseOrder() {
     setIsModalVisible(false);
+    setSelectedOrder(null);
   }
 
   return (

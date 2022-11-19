@@ -73,6 +73,17 @@ export function OrderModal({ visible, order, onRequestClose }: OrderModalProps) 
           </div>
 
         </S.OrderDetails>
+
+        <S.Actions>
+          <button className="primary" type="button">
+            <CookingPot size={20} />
+            Iniciar produção
+          </button>
+          <button className="secondary" type="button">
+            Cancelar pedido
+          </button>
+        </S.Actions>
+
       </S.ModalBody>
     </S.Overlay>
   );

@@ -130,3 +130,39 @@ export const OrderDetails = styled.div`
 
 
 `;
+
+export const Actions = styled.footer`
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  .primary {
+    background-color: #333;
+    border-radius: 48px;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .secondary {
+    background-color: transparent;
+    border-radius: 48px;
+    border: 0;
+    outline: 0;
+    color: #D73035;
+    font-weight: bold;
+    padding: 12px 24px;
+    margin-top: 0.6rem;
+
+    &:hover {
+      border: 1px solid rgba(204, 204, 204, 0.4);
+    }
+  }
+
+`;
