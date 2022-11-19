@@ -6,10 +6,11 @@ import * as S from './styles';
 
 interface OrderModalProps {
   visible: boolean;
+  onRequestClose: () => void;
   order: Order | null;
 }
 
-export function OrderModal({ visible, order }: OrderModalProps) {
+export function OrderModal({ visible, order, onRequestClose }: OrderModalProps) {
 
   if(!visible || !order){
     return null;
@@ -30,7 +31,7 @@ export function OrderModal({ visible, order }: OrderModalProps) {
       <S.ModalBody>
         <header>
           <strong>Mesa {order.table}</strong>
-          <button type="button">
+          <button type="button" onClick={onRequestClose}>
             <X size={20} />
           </button>
         </header>
