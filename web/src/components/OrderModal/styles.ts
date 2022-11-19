@@ -76,4 +76,57 @@ export const OrderDetails = styled.div`
     font-size: 14px;
     opacity: 0.8;
   }
+
+  .order-itens {
+    margin-top: 1rem;
+
+    .item {
+      display: flex;
+
+      & + .item {
+        margin-top: 1rem;
+      }
+
+      > span {
+          font-size: 14px;
+          color: #666;
+          display: block;
+          min-width: 20px;
+          margin-left: 12px;
+        }
+
+      img {
+        width: 56px;
+        height: 28.51px;
+        border-radius: 6px;
+      }
+
+      .product-details {
+        margin-left: 4px;
+
+        strong {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    > span {
+        font-size: 14px;
+        font-weight: 500;
+        opacity: 0.8;
+      }
+
+    > strong {
+        font-weight: bold;
+      }
+  }
+
+
 `;

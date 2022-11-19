@@ -1,5 +1,7 @@
 import { X, Clock, CookingPot, CheckSquare } from 'phosphor-react';
 import { Order } from '../../types/Order';
+import { formatCurrency } from '../../utils/formatCurrency';
+
 import * as S from './styles';
 
 interface OrderModalProps {
@@ -12,6 +14,16 @@ export function OrderModal({ visible, order }: OrderModalProps) {
   if(!visible || !order){
     return null;
   }
+
+  // let total = 0;
+
+  // order.products.forEach(({ product, quantity }) => {
+  //   total += product.price * quantity;
+  // });
+
+  const total = order.products.reduce((total, { product, quantity }) => {
+    return total + (product.price * quantity);
+  }, 0);
 
   return (
     <S.Overlay>
@@ -39,10 +51,26 @@ export function OrderModal({ visible, order }: OrderModalProps) {
 
         <S.OrderDetails>
           <strong>Itens</strong>
-          <div >
-            <img src="" alt="" />
-            <span>1x</span>
+
+          <div className="order-itens">
+            {order.products.map(({_id, product, quantity }) => (
+              <div key={_id} className='item'>
+                <img src={`http://localhost:3001/files/${product.imagePath}`} alt={product.name} />
+                <span>{quantity}x</span>
+
+                <div className='product-details'>
+                  <strong>{product.name}</strong>
+                  <span>{formatCurrency(product.price)}</span>
+                </div>
+              </div>
+            ))}
           </div>
+
+          <div className="total">
+            <span>Total</span>
+            <strong>{formatCurrency(total)}</strong>
+          </div>
+
         </S.OrderDetails>
       </S.ModalBody>
     </S.Overlay>
