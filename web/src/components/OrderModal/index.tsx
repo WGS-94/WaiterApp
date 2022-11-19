@@ -74,6 +74,7 @@ export function OrderModal({ visible, order, onRequestClose }: OrderModalProps) 
             {order.products.map(({_id, product, quantity }) => (
               <div key={_id} className='item'>
                 <img src={`http://localhost:3001/files/${product.imagePath}`} alt={product.name} />
+                {/* <img src={product.url} alt={product.name} /> */}
                 <span>{quantity}x</span>
 
                 <div className='product-details'>

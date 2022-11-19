@@ -96,8 +96,10 @@ export const OrderDetails = styled.div`
         }
 
       img {
-        width: 56px;
-        height: 28.51px;
+        /* width: 56px;
+        height: 28.51px; */
+        width: 70px;
+        height: 50px;
         border-radius: 6px;
       }
 

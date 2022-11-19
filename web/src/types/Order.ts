@@ -8,6 +8,7 @@ export interface Order {
     product: {
       name: string;
       imagePath: string;
+      url: string;
       price: number;
     }
   }[];
