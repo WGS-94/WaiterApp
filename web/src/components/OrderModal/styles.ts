@@ -32,6 +32,7 @@ export const ModalBody = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0;
 
     strong {
       font-size: 24px;
@@ -51,11 +52,28 @@ export const ModalBody = styled.div`
   }
 
   .status-container {
-    margin-top: 32px;
+    margin-top: 2rem;
 
     small {
       font-size: 14px;
       opacity: 0.8;
     }
+
+    div {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px
+    }
+  }
+`;
+
+export const OrderDetails = styled.div`
+  margin-top: 2rem;
+
+  > strong {
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.8;
   }
 `;
